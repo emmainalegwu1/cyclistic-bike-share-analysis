@@ -1,25 +1,32 @@
 # Cyclistic Bike-Share Analysis
 
 ## Project Overview
-This project analyses Cyclistic bike-share data to understand how annual members and casual riders use the company's bike-sharing services differently.
-
-The analysis explores usage patterns over a 12-month period in 2025, with the aim of identifying insights that can help Cyclistic improve customer engagement and convert casual riders into annual members.
+This project analyses Cyclistic bike-share usage from January to December 2025, comparing annual members and casual riders. Google BigQuery is used for data validation, cleaning and SQL analysis, while Tableau Public is used to visualise riding patterns and communicate business insights.
 
 ## Business Problem
-Cyclistic wants to understand the differences between annual members and casual riders to develop more effective marketing strategies and increase annual membership.
+Cyclistic wants to understand how annual members and casual riders use its bikes differently, so these patterns that can provide strategies to convert casual riders into annual members.
 
 ## Project Objectives
-- Analyse monthly trip patterns.
-- Compare total trips by rider type.
-- Compare mean ride durations.
-- Identify differences in weekday usage.
-- Examine seasonal riding patterns.
+Compare monthly trip volume and average ride duration by rider type.
+- Examine weekday and weekend riding behaviour.
+- Compare demand and ride duration across seasons.
 - Develop data-driven marketing recommendations.
 
 ## Tools and Technologies
-- Google BigQuery – SQL data cleaning and analysis.
-- Tableau Public – Data visualisation and dashboard development.
-- Google Sheet and Google Connected sheets – Data preparation and supporting analysis.
+- Google BigQuery 
+- Tableau Public 
+- Google Sheet and Google Connected sheets
+  
+Project Workflow
+
+1. Validate the 12 monthly source datasets.
+2. Clean records and calculate ride durations and calendar fields.
+3. Analyse monthly trip volume and average ride duration.
+4. Examine weekday and weekend behaviour.
+5. Compare seasonal riding patterns.
+6. Reconcile monthly, weekday and seasonal totals.
+7. Build an interactive Tableau dashboard.
+8. Document findings and business recommendations.
 
 ## Data Preparation
 The analysis uses 12 months of Cyclistic bike-share trip data.
@@ -41,22 +48,11 @@ Data processing activities include:
 - Categorising riders into members and casual users.
 - Extracting weekdays, months and seasons for trend analysis.
 
-## Analysis
-The analysis was conducted using Google BigQuery and Tableau Public.
-SQL Analysis – Google BigQuery
-- Data validation and identification of missing or duplicate records.
-- Data cleaning and ride-duration calculations.
-- Monthly trip count analysis by rider type.
-- Monthly average ride-duration analysis.
-- Weekday trip count and average ride-duration analysis.
-- Combining monthly summary datasets into annual analysis tables.
-
-## Data Visualisation – Tableau Public
-- Comparison of monthly trip patterns between members and casual riders.
-- Seasonal trip volume comparisons.
-- Seasonal average ride-duration comparisons.
-- Analysis of weekday and weekend riding behaviour.
-- Development of an interactive dashboard to communicate key findings.
+## Repository Structure
+- `SQL/` — SQL scripts and technical documentation.
+- `Visualisations/` — Tableau dashboard and chart screenshots.
+- `Data/` — Dataset source and description.
+- `Findings/` — Key findings and business recommendations.
 
 ## Dashboard
 (https://public.tableau.com/views/CyclisticBikeshareCasestudyViz/Dashboard1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
