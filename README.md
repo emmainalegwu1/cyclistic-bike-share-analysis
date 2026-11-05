@@ -42,14 +42,25 @@ Data processing activities include:
 - Extracting weekdays, months and seasons for trend analysis.
 
 ## Analysis
-The project examines:
-1. Annual trip count
-2. Annual trip count by user type.
-3. Monthly riding behaviour.
-4. Mean ride length.
-5. Weekday riding patterns.
-6. Seasonal riding behaviour.
-7. Combining monthly datasets.
+
+The analysis was conducted using Google BigQuery and Tableau Public.
+
+SQL Analysis – Google BigQuery
+
+- Data validation and identification of missing or duplicate records.
+- Data cleaning and ride-duration calculations.
+- Monthly trip count analysis by rider type.
+- Monthly average ride-duration analysis.
+- Weekday trip count and average ride-duration analysis.
+- Combining monthly summary datasets into annual analysis tables.
+
+## Data Visualisation – Tableau Public
+
+- Comparison of monthly trip patterns between members and casual riders.
+- Seasonal trip volume comparisons.
+- Seasonal average ride-duration comparisons.
+- Analysis of weekday and weekend riding behaviour.
+- Development of an interactive dashboard to communicate key findings.
 
 ## Dashboard
 (https://public.tableau.com/views/CyclisticBikeshareCasestudyViz/Dashboard1?:language=en-GB&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
