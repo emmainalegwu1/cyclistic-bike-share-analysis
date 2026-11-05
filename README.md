@@ -27,11 +27,12 @@ The analysis uses 12 months of Cyclistic bike-share trip data.
 Data preparation activities include:
 - Accessing data from Amazon AWS cloud storage https://divvy-tripdata.s3.amazonaws.com/index.html
 - Data licensing was through Motivate International inc., under the license https://divvybikes.com/data-license-agreement.
-- Data organisation and integrity confirming the format, size and structure, checking for duplicates and nulls in the data. Large file sizes of asseesed through Google Connected Sheets.
-- Data privacy was upheld as personal identifiable information and other sensitive data of users were excluded from the data.
-- Data credibility was upheld by collecting recent data for the 12 months in 2025 that includes all riders and rideable types of bike.
-- Data limitation is the unavailability of geographic data of riders to determine proximity to Cyclistics service area. 
-
+- Combining monthly datasets.
+- Identifying and removing invalid ride records.
+- Calculating ride durations.
+- Categorising riders into members and casual users.
+- Extracting weekdays, months and seasons for trend analysis.
+  
 ## Data Processing
 Data processing activities include:
 - Identifying distinct values and removing errors.
