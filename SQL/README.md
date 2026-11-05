@@ -21,11 +21,11 @@ The scripts are organised sequentially to demonstrate the data analysis process,
 
 02_data_cleaning.sql - Applies data-cleaning criteria, calculates ride durations and derives analytical fields.
 
-03_monthly_analysis.sql - Compares monthly trip counts and average ride durations between members and casual riders.
+03_monthly_analysis.sql - Compares monthly trip counts and mean ride durations between members and casual riders.
 
-04_weekday_analysis.sql - Examines trip volume and average ride duration across the seven days of the week.
+04_weekday_analysis.sql - Examines trip volume and mean ride duration across the seven days of the week.
 
-05_seasonal_analysis.sql - Groups trips into four seasons and compares riding patterns by rider type.
+05_seasonal_analysis.sql - Groups trips into four seasons and compares riding patterns by user type.
 
 06_final_validation.sql - Reconciles monthly, weekday and seasonal results to ensure consistency.
 
@@ -35,7 +35,7 @@ The analysis applies the following criteria:
 - Exclude records with missing ride IDs.
 - Exclude records with missing rider classifications.
 - Exclude records with missing start or end timestamps.
-- Exclude rides lasting 30 seconds or less.
+- Exclude rides lasting zero seconds.
 - Calculate ride duration using timestamp differences in seconds.
 - Derive month and weekday classifications from the ride start timestamp.
 
@@ -51,11 +51,11 @@ The SQL scripts generate the following analytical tables:
 
 ## Output table               Purpose
 
-2025_month_trip_summary - Monthly trip counts and mean ride duration by rider type.
+2025_month_trip_summary - Monthly trip counts and mean ride duration by user type.
 
-2025_weekday_trip_summary - Weekday trip counts and mean ride duration by rider type.
+2025_weekday_trip_summary - Weekday trip counts and mean ride duration by user type.
 
-2025_seasonal_summary - Seasonal trip counts and mean ride duration by rider type.
+2025_seasonal_summary - Seasonal trip counts and mean ride duration by user type.
 
 ## Execution Order
 
@@ -78,7 +78,7 @@ Final validation checks include:
 - Confirming that members and casual riders totals reconciles with month total.
 - Comparing weekday trip counts against monthly totals.
 - Investigating differences resulting from data cleaning or filtering.
-- Ensuring that the mean ride durations are calculated from individual valid trips rather than by simply averaging monthly averages.
+- Ensuring that the mean ride durations are calculated from individual valid trips rather than by simply mean monthly averages.
 
 ## Tools
 
