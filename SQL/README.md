@@ -1,12 +1,12 @@
-SQL Documentation
+## SQL Documentation
 
-Overview
+## Overview
 
 This folder contains the SQL scripts used to analyse the 2025 Cyclistic bike-share dataset. The analysis was conducted using Google BigQuery to examine differences in riding behaviour between annual members and casual riders.
 
 The scripts are organised sequentially to demonstrate the data analysis process, from initial data validation and cleaning through to monthly, weekday and seasonal analysis.
 
-Dataset
+## Dataset
 
 - Project: my-project-52671-510211
 - Dataset: Cyclistic_bikeshare
@@ -14,22 +14,22 @@ Dataset
 - Source tables: 2025_01_divvy_tripdata to 2025_12_divvy_tripdata, https://divvy-tripdata.s3.amazonaws.com/index.html
 - Licenece:  https://divvybikes.com/data-license-agreement
 
-SQL Scripts
+## SQL Scripts
 
-Script                        Description
-01_data_validation.sql        Examines data completeness, row counts, distinct ride IDs, null values and invalid records.
+## Script                     Description
+01_data_validation.sql - Examines data completeness, row counts, distinct ride IDs, null values and invalid records.
 
-02_data_cleaning.sql          Applies data-cleaning criteria, calculates ride durations and derives analytical fields.
+02_data_cleaning.sql - Applies data-cleaning criteria, calculates ride durations and derives analytical fields.
 
-03_monthly_analysis.sql       Compares monthly trip counts and average ride durations between members and casual riders.
+03_monthly_analysis.sql - Compares monthly trip counts and average ride durations between members and casual riders.
 
-04_weekday_analysis.sql       Examines trip volume and average ride duration across the seven days of the week.
+04_weekday_analysis.sql - Examines trip volume and average ride duration across the seven days of the week.
 
-05_seasonal_analysis.sql      Groups trips into four seasons and compares riding patterns by rider type.
+05_seasonal_analysis.sql - Groups trips into four seasons and compares riding patterns by rider type.
 
-06_final_validation.sql       Reconciles monthly, weekday and seasonal results to ensure consistency.
+06_final_validation.sql - Reconciles monthly, weekday and seasonal results to ensure consistency.
 
-Data Cleaning Criteria
+## Data Cleaning Criteria
 The analysis applies the following criteria:
 
 - Exclude records with missing ride IDs.
@@ -45,19 +45,19 @@ TIMESTAMP_DIFF(ended_at, started_at, SECOND) > 0
 
 The same cleaning criteria should be applied consistently across monthly, weekday and seasonal analysis.
 
-Analytical Outputs
+## Analytical Outputs
 
 The SQL scripts generate the following analytical tables:
 
-Output table                  Purpose
+## Output table               Purpose
 
-2025_month_trip_summary       Monthly trip counts and mean ride duration by rider type.
+2025_month_trip_summary - Monthly trip counts and mean ride duration by rider type.
 
-2025_weekday_trip_summary     Weekday trip counts and mean ride duration by rider type.
+2025_weekday_trip_summary - Weekday trip counts and mean ride duration by rider type.
 
-2025_seasonal_summary         Seasonal trip counts and mean ride duration by rider type.
+2025_seasonal_summary - Seasonal trip counts and mean ride duration by rider type.
 
-Execution Order
+## Execution Order
 
 Run the scripts in the following order:
 
@@ -70,7 +70,7 @@ Run the scripts in the following order:
 
 The output tables are subsequently used in Tableau Public to develop the project's visualisations and interactive dashboard.
 
-Validation
+## Validation
 
 Final validation checks include:
 
@@ -80,7 +80,7 @@ Final validation checks include:
 - Investigating differences resulting from data cleaning or filtering.
 - Ensuring that the mean ride durations are calculated from individual valid trips rather than by simply averaging monthly averages.
 
-Tools
+## Tools
 
 - Google BigQuery
 - Google Connected Sheets
