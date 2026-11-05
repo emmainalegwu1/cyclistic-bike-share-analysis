@@ -42,11 +42,8 @@ Data processing activities include:
 - Extracting weekdays, months and seasons for trend analysis.
 
 ## Analysis
-
 The analysis was conducted using Google BigQuery and Tableau Public.
-
 SQL Analysis – Google BigQuery
-
 - Data validation and identification of missing or duplicate records.
 - Data cleaning and ride-duration calculations.
 - Monthly trip count analysis by rider type.
@@ -55,7 +52,6 @@ SQL Analysis – Google BigQuery
 - Combining monthly summary datasets into annual analysis tables.
 
 ## Data Visualisation – Tableau Public
-
 - Comparison of monthly trip patterns between members and casual riders.
 - Seasonal trip volume comparisons.
 - Seasonal average ride-duration comparisons.
