@@ -16,36 +16,20 @@ Dataset
 
 SQL Scripts
 
-Script
+Script                        Description
+01_data_validation.sql        Examines data completeness, row counts, distinct ride IDs, null values and invalid records.
 
-Description
+02_data_cleaning.sql          Applies data-cleaning criteria, calculates ride durations and derives analytical fields.
 
-01_data_validation.sql
+03_monthly_analysis.sql       Compares monthly trip counts and average ride durations between members and casual riders.
 
-Examines data completeness, row counts, distinct ride IDs, null values and invalid records.
+04_weekday_analysis.sql       Examines trip volume and average ride duration across the seven days of the week.
 
-02_data_cleaning.sql
+05_seasonal_analysis.sql      Groups trips into four seasons and compares riding patterns by rider type.
 
-Applies data-cleaning criteria, calculates ride durations and derives analytical fields.
-
-03_monthly_analysis.sql
-
-Compares monthly trip counts and average ride durations between members and casual riders.
-
-04_weekday_analysis.sql
-
-Examines trip volume and average ride duration across the seven days of the week.
-
-05_seasonal_analysis.sql
-
-Groups trips into four seasons and compares riding patterns by rider type.
-
-06_final_validation.sql
-
-Reconciles monthly, weekday and seasonal results to ensure consistency.
+06_final_validation.sql       Reconciles monthly, weekday and seasonal results to ensure consistency.
 
 Data Cleaning Criteria
-
 The analysis applies the following criteria:
 
 - Exclude records with missing ride IDs.
@@ -65,21 +49,13 @@ Analytical Outputs
 
 The SQL scripts generate the following analytical tables:
 
-Output table
+Output table                  Purpose
 
-Purpose
+2025_month_trip_summary       Monthly trip counts and mean ride duration by rider type.
 
-2025_month_trip_summary
+2025_weekday_trip_summary     Weekday trip counts and mean ride duration by rider type.
 
-Monthly trip counts and mean ride duration by rider type.
-
-2025_weekday_trip_summary
-
-Weekday trip counts and mean ride duration by rider type.
-
-2025_seasonal_summary
-
-Seasonal trip counts and mean ride duration by rider type.
+2025_seasonal_summary         Seasonal trip counts and mean ride duration by rider type.
 
 Execution Order
 
