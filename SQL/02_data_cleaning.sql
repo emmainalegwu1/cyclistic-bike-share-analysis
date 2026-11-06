@@ -1,1 +1,64 @@
+-- =========================================
+-- PROJECT: CYCLISTIC BIKE-SHARE ANALYSIS
+-- SCRIPT: DATA CLEANING
+-- TOOL: GOOGLE BIGQUERY
+-- PERIOD: JANUARY - DECEMBER 2025
+-- =========================================
 
+-- Objective:
+-- Create one reusable cleaned view for all 2025 analysis.
+-- Cleaning rule: retain rides above 0 second.
+-- This uses SELECT * since the 12 monthly source tables have identical schemas/column order. See SQL/README.md.
+
+CREATE OR REPLACE VIEW `my-project-52671-510211.Cyclistic_bikeshare.2025_cleaned_trips` AS
+WITH all_trips AS (
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_01_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_02_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_03_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_04_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_05_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_06_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_07_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_08_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_09_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_10_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_11_divvy_tripdata`
+  UNION ALL
+  SELECT * FROM `my-project-52671-510211.Cyclistic_bikeshare.2025_12_divvy_tripdata`
+)
+SELECT
+  ride_id,
+  rideable_type,
+  started_at,
+  ended_at,
+  start_station_name,
+  start_station_id,
+  end_station_name,
+  end_station_id,
+  start_lat,
+  start_lng,
+  end_lat,
+  end_lng,
+  member_casual AS user_type,
+  TIMESTAMP_DIFF(ended_at, started_at, SECOND) AS ride_len_seconds,
+  TIMESTAMP_DIFF(ended_at, started_at, SECOND) / 60.0 AS ride_len_minutes,
+  EXTRACT(MONTH FROM DATE(started_at)) AS month_num,
+  FORMAT_DATE('%B', DATE(started_at)) AS month,
+  EXTRACT(DAYOFWEEK FROM DATE(started_at)) AS day_num,
+  FORMAT_DATE('%A', DATE(started_at)) AS day_of_week
+FROM all_trips
+WHERE ride_id IS NOT NULL
+  AND member_casual IS NOT NULL
+  AND started_at IS NOT NULL
+  AND ended_at IS NOT NULL
+  AND TIMESTAMP_DIFF(ended_at, started_at, SECOND) > 0;
