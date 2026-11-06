@@ -43,7 +43,7 @@ The duration criterion is implemented using:
 
 TIMESTAMP_DIFF(ended_at, started_at, SECOND) > 0
 
-The same cleaning criteria should be applied consistently across monthly, weekday and seasonal analysis.
+The same cleaning criteria was applied consistently across monthly, weekday and seasonal analysis.
 
 ## Analytical Outputs
 
@@ -59,7 +59,7 @@ The SQL scripts generate the following analytical tables:
 
 ## Execution Order
 
-Run the scripts in the following order:
+I ran the scripts in the following order:
 
 1. 01_data_validation.sql
 2. 02_data_cleaning.sql
